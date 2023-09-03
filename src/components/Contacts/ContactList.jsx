@@ -1,15 +1,17 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { List, Item, DelButton, Text, Title2 } from './Styles';
+import { List, Item, DelButton, Text, Title2 } from '../Styles';
 import { delContact } from 'redux/contacts/contactsSlice';
-import { selectContacts, selectFilter } from 'redux/contacts/selesctors';
-import { deleteContact } from 'redux/operations';
-import { selectError, selectIsLoading } from 'redux/contacts/selesctors';
+import { selectContacts, selectFilter } from 'redux/selesctors';
+import { deleteContact } from 'redux/contacts/operations';
+import { selectError, selectIsLoading } from 'redux/selesctors';
+import { useAuth } from 'hooks';
 
 const ContactList = () => {
   const contacts = useSelector(selectContacts);
   const filter = useSelector(selectFilter);
   const isLoading = useSelector(selectIsLoading);
   const error = useSelector(selectError);
+  const { isLoggedIn } = useAuth();
 
   const dispatch = useDispatch();
 
@@ -26,6 +28,8 @@ const ContactList = () => {
       {isLoading && !error && <Title2>Request in progress...</Title2>}
       {error ? (
         <Title2>{error}</Title2>
+      ) : !isLoggedIn ? (
+        <Title2>Please, sign up or login</Title2>
       ) : (
         filteredContacts.map(contact => (
           <Item key={contact.id} data-key={contact.id}>

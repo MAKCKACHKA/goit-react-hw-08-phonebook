@@ -1,13 +1,9 @@
-import { Form, Button, Group, Label, Input } from './Styles';
+import { Form, Button, Group, Label, Input } from '../Styles';
 import { useDispatch, useSelector } from 'react-redux';
 import { changeName, changeNumber } from 'redux/contacts/createContact';
 
-import {
-  selectContacts,
-  selectName,
-  selectNumber,
-} from 'redux/contacts/selesctors';
-import { addContact } from 'redux/operations';
+import { selectContacts, selectName, selectNumber } from 'redux/selesctors';
+import { addContact } from 'redux/contacts/operations';
 
 const ContactForm = () => {
   const contacts = useSelector(selectContacts);
