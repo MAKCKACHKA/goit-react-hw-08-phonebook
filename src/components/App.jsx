@@ -1,3 +1,15 @@
+import * as React from 'react';
+import {
+  Box,
+  ChakraProvider,
+  Flex,
+  useColorMode,
+  useColorModeValue,
+} from '@chakra-ui/react';
+import { Container } from '@chakra-ui/react';
+
+// code
+
 import { fetchContacts } from 'redux/contacts/operations';
 import { useDispatch } from 'react-redux';
 import { useEffect, lazy } from 'react';
@@ -26,16 +38,26 @@ export const App = () => {
     }
   }, [isLoggedIn, dispatch]);
 
-  return isRefreshing ? (
-    <b>Refreshing user...</b>
-  ) : (
-    <Routes>
-      <Route path="/goit-react-hw-08-phonebook" element={<Layout />}>
-        <Route index element={<Home />} />
-        <Route path="register" element={<Register />} />
-        <Route path="login" element={<Login />} />
-        <Route path="contacts" element={<Contacts />} />
-      </Route>
-    </Routes>
+  // Chakra
+
+  const bg = useColorModeValue('gray.700');
+  const color = useColorModeValue('gray.300');
+  return (
+    <ChakraProvider>
+      <Box bg={bg} color={color} w="100%" height="100vh">
+        {isRefreshing ? (
+          <b>Refreshing user...</b>
+        ) : (
+          <Routes>
+            <Route path="/goit-react-hw-08-phonebook" element={<Layout />}>
+              <Route index element={<Home />} />
+              <Route path="register" element={<Register />} />
+              <Route path="login" element={<Login />} />
+              <Route path="contacts" element={<Contacts />} />
+            </Route>
+          </Routes>
+        )}
+      </Box>
+    </ChakraProvider>
   );
 };

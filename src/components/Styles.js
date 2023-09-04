@@ -25,10 +25,10 @@ export const Form = styled.form`
   font-size: 20px;
   font-weight: 700;
   line-height: 150%;
-  max-width: 450px;
-  margin-left: 20px;
-  padding: 20px;
-  border: 2px solid #757575;
+  width: 520px;
+
+  padding: 30px;
+  border: 2px solid teal;
   border-radius: 5px;
 
   display: flex;
@@ -46,8 +46,8 @@ export const Label = styled.label`
   font-weight: normal;
   position: absolute;
   pointer-events: none;
-  left: 5px;
-  top: 10px;
+  left: 15px;
+  top: 5px;
   transition: 0.2s ease all;
   -moz-transition: 0.2s ease all;
   -webkit-transition: 0.2s ease all;
@@ -60,15 +60,19 @@ export const Input = styled.input`
 
   padding: 10px 10px 10px 5px;
   display: block;
-  width: 300px;
+  width: 340px;
+  height: 40px;
   border: none;
-  border-bottom: 1px solid #757575;
+
+  background-color: transparent;
+  border-bottom: 2px solid #757575;
+  border-radius: 10px;
   &:focus {
     outline: none;
   }
   &:focus ~ label,
   &:valid ~ label {
-    top: -20px;
+    top: -25px;
     font-size: 16px;
   }
 `;
@@ -76,7 +80,7 @@ export const Input = styled.input`
 export const Button = styled.button`
   appearance: none;
   background-color: transparent;
-  border: 1px solid #1a1a1a;
+  border: 1px solid teal;
   border-radius: 15px;
   box-sizing: border-box;
   cursor: pointer;
@@ -105,7 +109,7 @@ export const Button = styled.button`
 
   &:hover {
     color: #fff;
-    background-color: #1a1a1a;
+    background-color: teal;
     box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
   }
 
@@ -116,7 +120,7 @@ export const Button = styled.button`
 
 export const FilterLabel = styled.label`
   font-family: georgia, serif;
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 500;
   line-height: 150%;
   margin-left: 25px;
@@ -130,14 +134,21 @@ export const FilterInput = styled.input`
   margin-left: 15px;
   width: 210px;
   border: none;
-  border-bottom: 1px solid #1a1a1a;
+  border-bottom: 1px solid #757575;
+  background-color: transparent;
+  border-radius: 10px;
+
   &:focus {
     outline: none;
   }
 `;
 
 export const List = styled.ul`
-  max-width: 470px;
+  margin-top: 20px;
+  width: 520px;
+  padding: 20px;
+  border: 2px solid teal;
+  border-radius: 5px;
 `;
 
 export const Item = styled.li`
@@ -147,6 +158,8 @@ export const Item = styled.li`
   font-size: 20px;
   line-height: 125%;
   position: relative;
+  border: 2px solid black;
+  padding: 15px;
 `;
 export const DelButton = styled(Button)`
   font-size: 14px;
@@ -156,7 +169,7 @@ export const DelButton = styled(Button)`
   outline: none;
   padding: 2px 6px;
   position: absolute;
-  right: 0;
+  right: 5px;
   top: 50%;
   transform: translateY(-48%);
 `;

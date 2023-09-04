@@ -1,0 +1,7 @@
+.link {
+  border-bottom: 5px solid teal;
+}
+
+.link:hover {
+  color: teal;
+}

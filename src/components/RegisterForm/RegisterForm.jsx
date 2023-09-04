@@ -1,6 +1,7 @@
 import { useDispatch } from 'react-redux';
 import { register, logIn } from 'redux/auth/operations';
 import css from './RegisterForm.module.css';
+import { Button, Center, Input, Text } from '@chakra-ui/react';
 
 export const RegisterForm = () => {
   const dispatch = useDispatch();
@@ -26,22 +27,35 @@ export const RegisterForm = () => {
 
   return (
     <>
-      <h3>Registration</h3>
+      <Center>
+        <Text fontSize={'4xl'}>Registration</Text>
+      </Center>
 
       <form className={css.form} onSubmit={handleSubmit} autoComplete="off">
         <label className={css.label}>
           Username
-          <input type="text" name="name" />
+          <Input type="text" name="name" />
         </label>
         <label className={css.label}>
           Email
-          <input type="email" name="email" />
+          <Input type="email" name="email" />
         </label>
         <label className={css.label}>
           Password
-          <input type="password" name="password" />
+          <Input type="password" name="password" />
         </label>
-        <button type="submit">Register</button>
+        <Center>
+          <Button
+            colorScheme="teal"
+            _hover={{
+              bg: 'teal',
+              color: 'gray.700',
+            }}
+            type="submit"
+          >
+            Register
+          </Button>
+        </Center>
       </form>
     </>
   );
