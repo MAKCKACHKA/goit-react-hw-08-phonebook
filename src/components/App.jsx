@@ -1,14 +1,5 @@
 import * as React from 'react';
-import {
-  Box,
-  ChakraProvider,
-  Flex,
-  useColorMode,
-  useColorModeValue,
-} from '@chakra-ui/react';
-import { Container } from '@chakra-ui/react';
-
-// code
+import { Box, ChakraProvider, useColorModeValue } from '@chakra-ui/react';
 
 import { fetchContacts } from 'redux/contacts/operations';
 import { useDispatch } from 'react-redux';
@@ -18,7 +9,7 @@ import { Route, Routes } from 'react-router-dom';
 import { useAuth } from 'hooks';
 import { refreshUser } from 'redux/auth/operations';
 
-import { Layout } from './Layout';
+import { Layout } from './Layout/Layout';
 const Home = lazy(() => import('../pages/Home'));
 const Register = lazy(() => import('../pages/Register'));
 const Login = lazy(() => import('../pages/Login'));

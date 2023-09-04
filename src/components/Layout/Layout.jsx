@@ -1,6 +1,6 @@
 import { Outlet } from 'react-router-dom';
 import { Suspense } from 'react';
-import { UserMenu } from './UserMenu/UserMenu';
+import { UserMenu } from '../UserMenu/UserMenu';
 import { useAuth } from 'hooks';
 import { Center, Text } from '@chakra-ui/react';
 
