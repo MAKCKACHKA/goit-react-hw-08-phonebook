@@ -1,5 +1,11 @@
 import * as React from 'react';
-import { Box, ChakraProvider, useColorModeValue } from '@chakra-ui/react';
+import {
+  Box,
+  Center,
+  ChakraProvider,
+  Text,
+  useColorModeValue,
+} from '@chakra-ui/react';
 
 import { fetchContacts } from 'redux/contacts/operations';
 import { useDispatch } from 'react-redux';
@@ -37,7 +43,10 @@ export const App = () => {
     <ChakraProvider>
       <Box bg={bg} color={color} w="100%" height="100vh">
         {isRefreshing ? (
-          <b>Refreshing user...</b>
+          <Center pt={'45vh'}>
+            {' '}
+            <Text fontSize="6xl">Loading...</Text>
+          </Center>
         ) : (
           <Routes>
             <Route path="/goit-react-hw-08-phonebook" element={<Layout />}>
