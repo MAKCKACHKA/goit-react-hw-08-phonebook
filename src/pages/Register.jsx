@@ -1,7 +1,7 @@
 import { RegisterForm } from 'components/RegisterForm/RegisterForm';
 import { useAuth } from 'hooks';
 import { Link, Navigate } from 'react-router-dom';
-import { Button, ButtonGroup, Center, Flex } from '@chakra-ui/react';
+import { Button, Center, Flex } from '@chakra-ui/react';
 
 export const Register = () => {
   const { isLoggedIn } = useAuth();

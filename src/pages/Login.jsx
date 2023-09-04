@@ -2,7 +2,7 @@ import { LoginForm } from 'components/LoginForm/LoginForm';
 import { useAuth } from 'hooks';
 import { Link, Navigate } from 'react-router-dom';
 
-import { Button, ButtonGroup, Center, Flex } from '@chakra-ui/react';
+import { Button, Center, Flex } from '@chakra-ui/react';
 
 const Login = () => {
   const { isLoggedIn } = useAuth();
